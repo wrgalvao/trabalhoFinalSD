@@ -96,8 +96,5 @@ public class principal
         System.out.println(h1.qtdQuartosDisponiveis());
         System.out.println("Quantidade de clientes = " + h1.qtdClientes());
         System.out.println("Quantidade de quartos  = " +h1.qtdQuartos());
-        
-        
-
     }
 }
