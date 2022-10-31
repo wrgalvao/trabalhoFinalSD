@@ -1,44 +1,27 @@
 package classes;
+
+import java.rmi.RemoteException;
+import java.rmi.server.UnicastRemoteObject;
 import java.util.List;
 /**
  *
  * @author wrgalvao
  */
-public class hotel extends empresa
+public class hotel extends UnicastRemoteObject implements consulta
 {
+    private int cnpj;
+    private String razaSocial;
+    private String nomeFantasia;
     private List<quarto> quartos;
-    private List<departamento> departamentos;
     private List<cliente> clientes;
 
-    public List<quarto> getQuartos()
-    {
-        return quartos;
-    }
-    
-    public void setQuartos(List<quarto> quartos) {
-        this.quartos = quartos;
-    }
-
-    public List<departamento> getDepartamentos()
-    {
-        return departamentos;
-    }
-
-    public void setDepartamentos(List<departamento> departamentos)
-    {
-        this.departamentos = departamentos;
-    }
-
-    public List<cliente> getClientes() {
-        return clientes;
-    }
-
-    public void setClientes(List<cliente> clientes)
-    {
-        this.clientes = clientes;
-    }
-    
-    int qtdQuartosDisponiveis()
+    /**
+     *
+     * @return
+     * @throws RemoteException
+     */
+    @Override
+    public int qtdQuartosDisponiveis() throws RemoteException
     {
         int qtdDisponiveis = 0;
         int i;
@@ -52,15 +35,65 @@ public class hotel extends empresa
         return qtdDisponiveis;
     }
     
-    int qtdClientes()
+    @Override
+    public int qtdClientes() throws RemoteException
     {
         return this.clientes.size();
     }
     
-    int qtdQuartos()
+    @Override
+    public int qtdQuartos() throws RemoteException
     {
         return this.quartos.size();
     }
-}
 
+    public int getCnpj()
+    {
+        return cnpj;
+    }
+
+    public void setCnpj(int cnpj)
+    {
+        this.cnpj = cnpj;
+    }
+
+    public String getRazaSocial()
+    {
+        return razaSocial;
+    }
+
+    public void setRazaSocial(String razaSocial)
+    {
+        this.razaSocial = razaSocial;
+    }
+
+    public String getNomeFantasia()
+    {
+        return nomeFantasia;
+    }
+
+    public void setNomeFantasia(String nomeFantasia)
+    {
+        this.nomeFantasia = nomeFantasia;
+    }
+
+    public List<quarto> getQuartos() {
+        return quartos;
+    }
+
+    public void setQuartos(List<quarto> quartos)
+    {
+        this.quartos = quartos;
+    }
+
+    public List<cliente> getClientes()
+    {
+        return clientes;
+    }
+
+    public void setClientes(List<cliente> clientes)
+    {
+        this.clientes = clientes;
+    }
+}
 

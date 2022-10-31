@@ -18,11 +18,13 @@ public class quarto
         this.numero = numero;
     }
 
-    public boolean isOcupacao() {
+    public boolean isOcupacao()
+    {
         return ocupacao;
     }
 
-    public void setOcupacao(boolean ocupacao) {
+    public void setOcupacao(boolean ocupacao)
+    {
         this.ocupacao = ocupacao;
     }
 

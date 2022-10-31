@@ -19,19 +19,23 @@ public class pessoa
         this.nome = nome;
     }
 
-    public int getIdade() {
+    public int getIdade()
+    {
         return idade;
     }
 
-    public void setIdade(int idade) {
+    public void setIdade(int idade)
+    {
         this.idade = idade;
     }
 
-    public int getRg() {
+    public int getRg()
+    {
         return rg;
     }
 
-    public void setRg(int rg) {
+    public void setRg(int rg)
+    {
         this.rg = rg;
     }
 }
