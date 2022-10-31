@@ -3,7 +3,7 @@ package classes;
  *
  * @author wrgalvao
  */
-public class cliente extends pessoa 
+public class cliente extends pessoa
 {
     private quarto quartoCliente;
 
@@ -16,4 +16,5 @@ public class cliente extends pessoa
     {
         this.quartoCliente = quartoCliente;
     }
+    
 }

@@ -3,10 +3,7 @@ package classes;
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
 import java.util.List;
-/**
- *
- * @author wrgalvao
- */
+
 public class hotel extends UnicastRemoteObject implements consulta
 {
     private int cnpj;
@@ -14,12 +11,12 @@ public class hotel extends UnicastRemoteObject implements consulta
     private String nomeFantasia;
     private List<quarto> quartos;
     private List<cliente> clientes;
+    
+    public hotel() throws RemoteException
+    {
+        //super
+    }
 
-    /**
-     *
-     * @return
-     * @throws RemoteException
-     */
     @Override
     public int qtdQuartosDisponiveis() throws RemoteException
     {
@@ -35,12 +32,14 @@ public class hotel extends UnicastRemoteObject implements consulta
         return qtdDisponiveis;
     }
     
+
     @Override
     public int qtdClientes() throws RemoteException
     {
         return this.clientes.size();
     }
     
+
     @Override
     public int qtdQuartos() throws RemoteException
     {
@@ -94,6 +93,5 @@ public class hotel extends UnicastRemoteObject implements consulta
     public void setClientes(List<cliente> clientes)
     {
         this.clientes = clientes;
-    }
+    }    
 }
-

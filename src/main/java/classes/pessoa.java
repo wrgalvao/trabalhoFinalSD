@@ -1,7 +1,9 @@
+
 package classes;
+
 /**
  *
- * @author wrgalvao
+ * @author wrgal
  */
 public class pessoa
 {
