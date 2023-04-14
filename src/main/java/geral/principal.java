@@ -5,6 +5,8 @@ import java.rmi.Naming;
 import java.rmi.RemoteException;
 import java.rmi.registry.LocateRegistry;
 import java.util.ArrayList;
+import java.rmi.server.*;
+//"rmi://localhost/hotel"
 /**
  *
  * @author wrgalvao
@@ -57,10 +59,12 @@ public class principal
         h1.setClientes(clientes);
         h1.setQuartos(quartos);
         
-        String ObjetoNome = "rmi://localhost/hotel";
-        System.out.println("Registrando o objeto no RMIRegistry...");
+        System.setProperty("java.rmi.server.hostname","10.204.22.150");
+        String ObjetoNome = "rmi://10.204.22.150/hotel";
+        System.out.println("SERVIDOR NO AR...");
         LocateRegistry.createRegistry(1099);
         Naming.rebind(ObjetoNome, h1);
-        System.out.println("Aguardando clientes"); 
+        System.out.println("Aguardando clientes");
+        
     }
 }

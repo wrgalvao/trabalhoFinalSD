@@ -9,7 +9,7 @@ public class clienteRMI
 {
     public static void main(String[] args) throws Exception
     {
-        String objetoNome = "rmi://localhost:1099/hotel";
+        String objetoNome = "rmi://10.204.22.150:1099/hotel";
         consultas h1 = (consultas) Naming.lookup(objetoNome);
         System.out.println("Quantidade de clientes e: " +h1.qtdClientes());
         System.out.println("Quantidade total de quartos e: "+h1.qtdQuartos());
